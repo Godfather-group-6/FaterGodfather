@@ -8,7 +8,7 @@ public class RecrutableNPC : InteractableBubbleItem
 {
     public bool isFollowing = false;
     public int arrayIndex;
-    public float offset = 2f;
+    public float offset = 1f;
     public Transform target = null;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -47,7 +47,7 @@ public class RecrutableNPC : InteractableBubbleItem
 
     void FollowTarget(Vector2 direction)
     {
-        if (Vector2.Distance(target.position, transform.position) >= 3)
+        if (Vector2.Distance(target.position, transform.position) >= offset)
         {
             rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
         }
