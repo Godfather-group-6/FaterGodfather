@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 3831802855053437190}
   - component: {fileID: 2498692740320824520}
   - component: {fileID: 163968166161713365}
+  - component: {fileID: 448151374}
   m_Layer: 0
   m_Name: NPCSad
   m_TagString: NPCSad
@@ -201,9 +202,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0040216926, y: -0.004777241}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.33417636
 --- !u!114 &163968166161713365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,11 +217,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1749325ac7143499458e322e843583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peopleAmountNeeded: 3
+  peopleAmountNeeded: 1
   peopleAmountText: {fileID: 4048931382756419592}
   happy: 0
   isInTrouble: 0
   infoBubble: {fileID: 3831802855612054915}
+--- !u!58 &448151374
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831802855053437191}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0020340325, y: 0.0023885728}
+  serializedVersion: 2
+  m_Radius: 0.17102328
 --- !u!1 &3831802855445141018
 GameObject:
   m_ObjectHideFlags: 0

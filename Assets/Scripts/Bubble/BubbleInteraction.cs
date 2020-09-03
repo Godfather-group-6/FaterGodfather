@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
+
 
 public class BubbleInteraction : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class BubbleInteraction : MonoBehaviour
     public float bubbleScaleMax = .2f;
 
     public List<RecrutableNPC> recrutables = new List<RecrutableNPC>();
+    Player player;
+
 
     public int peopleHitCounter = 1;
 
@@ -16,6 +20,8 @@ public class BubbleInteraction : MonoBehaviour
     private void Start()
     {
         bubble.SetActive(false);
+        player = ReInput.players.GetPlayer(0);
+
     }
 
     private void Update()
@@ -42,16 +48,16 @@ public class BubbleInteraction : MonoBehaviour
         peopleHitCounter = 1 + recrutables.Count;
     }
 
-    void InteractBubble()
+    public void InteractBubble()
     {
 
-        if (Input.GetKeyDown(KeyCode.J) && !bubble.activeSelf || Input.GetButton("Fire3") && !bubble.activeSelf)
+        if (player.GetButtonDown("Buble") && !bubble.activeSelf)
         {
             bubble.SetActive(true);
             bubble.transform.localScale = Vector3.one * bubbleScaleMin;
         }
 
-        if (Input.GetKey(KeyCode.J) && bubble.activeSelf || Input.GetButton("Fire3") && bubble.activeSelf)
+        if (player.GetButton("Buble") && bubble.activeSelf)
         {
             if (bubble.transform.localScale.x >= bubbleScaleMax)
                 bubble.transform.localScale = Vector3.one * bubbleScaleMax;
@@ -60,7 +66,7 @@ public class BubbleInteraction : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.J) && bubble.activeSelf || Input.GetButton("Fire3") && bubble.activeSelf)
+        if (player.GetButtonUp("Buble") && bubble.activeSelf)
         {
             bubble.transform.localScale = Vector3.one * bubbleScaleMin;
             bubble.SetActive(false);
@@ -81,15 +87,22 @@ public class BubbleInteraction : MonoBehaviour
         }
     }
 
-    public void DispatchFollowers()
+    public void DispatchFollowers(int peopleNeeded)
     {
         peopleHitCounter = 1;
-        foreach (RecrutableNPC recrutableNPC in recrutables)
+        for (int i = 0; i < peopleNeeded - 1; i++)
         {
-            recrutableNPC.isFollowing = false;
-            recrutableNPC.target = null;
-            Destroy(recrutableNPC.gameObject);
+            RecrutableNPC lastRecrutable = recrutables[recrutables.Count - 1];
+            recrutables.Remove(lastRecrutable);
+            Destroy(lastRecrutable.gameObject);
         }
-        recrutables.Clear();
+        //foreach (RecrutableNPC recrutableNPC in recrutables)
+        //{
+        //    recrutableNPC.isFollowing = false;
+        //    recrutableNPC.target = null;
+        //    Destroy(recrutableNPC.gameObject);
+        //    recrutables.remlo
+        //}
+        //recrutables.Clear();
     }
 }

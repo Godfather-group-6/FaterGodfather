@@ -27,8 +27,11 @@ public class BubbleBehaviour : MonoBehaviour
 
             if (bubbleInteraction.peopleHitCounter >= collision.gameObject.GetComponent<NPCSad>().peopleAmountNeeded)
             {
-                collision.gameObject.GetComponent<NPCSad>().Helped();
-                bubbleInteraction.DispatchFollowers();
+                if (!collision.gameObject.GetComponent<NPCSad>().happy)
+                {
+                    collision.gameObject.GetComponent<NPCSad>().Helped();
+                    bubbleInteraction.DispatchFollowers(collision.gameObject.GetComponent<NPCSad>().peopleAmountNeeded);
+                }
             }
             else
             {
