@@ -2,44 +2,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+
     Rigidbody2D rb;
     CircleCollider2D circleCollider;
 
+    Player player;
+
     float horizontal;
     float vertical;
-    public float speed = 20.0f;
+    public float speed = 200.0f;
+    private Vector2 inputVector = Vector2.zero;
+    private BubbleInteraction bubbleInteraction;
+
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
+
+        player = ReInput.players.GetPlayer(0);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!Input.GetKey(KeyCode.J))
-        {
-            Move();
-        }
-        else
-        {
-            horizontal = 0;
-            vertical = 0;
-        }
-    }
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, vertical * speed * Time.deltaTime);
+        Move();
+        if(!player.GetButton("Buble")) 
+        {
+            rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, vertical * speed * Time.deltaTime);
+        } else {
+            rb.velocity = new Vector2(0,0);
+        }
+        
+
     }
 
     void Move()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = player.GetAxis("Move Horizontal");
+        vertical = player.GetAxis("Move Vertical");
     }
 }

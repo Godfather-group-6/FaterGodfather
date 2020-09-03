@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Rewired;
+
 
 public class NPCHammering : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class NPCHammering : MonoBehaviour
     public Slider healthBarSlider;
 
     public GameObject bully;
+    Player player;
     
 
     float health = 10f;
@@ -30,6 +33,8 @@ public class NPCHammering : MonoBehaviour
         healthBar.SetActive(false);
         healthBarSlider.value = health;
         healthBarSlider.maxValue = maxHealth;
+        player = ReInput.players.GetPlayer(0);
+
     }
 
     
@@ -69,7 +74,7 @@ public class NPCHammering : MonoBehaviour
     {
         if(alive)
         {
-            if(Input.GetKeyDown("space") && interactable)
+            if(player.GetButtonDown("Hammering") && interactable)
             {
                 LowerBar(1f);
             }
