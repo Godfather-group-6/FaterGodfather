@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class AlarmObject : MonoBehaviour
 {
@@ -18,12 +19,15 @@ public class AlarmObject : MonoBehaviour
     public float rayon = 2f;
 
     List<GameObject> hostilesInRange = new List<GameObject>();
+    Player player;
+
 
 
     void Awake()
     {
         circleCollider = GetComponent<CircleCollider2D>();
         infoBubble.SetActive(false);
+        player = ReInput.players.GetPlayer(0);
 
     }
 
@@ -63,7 +67,7 @@ public class AlarmObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("e") && interactable && !triggered)
+        if(player.GetButtonDown("Interact") && interactable && !triggered)
         {
             Debug.Log("Ding dong");
             triggered = true;
