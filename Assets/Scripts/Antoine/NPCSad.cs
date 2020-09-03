@@ -14,6 +14,9 @@ public class NPCSad : MonoBehaviour
 
     CircleCollider2D circleCollider;
     public GameObject infoBubble;
+
+    public AudioSource audiosource;
+    public AudioClip ohyeahsound;
     
     //BubbleInteraction bubbleInteraction;
     TextMeshProUGUI TMP_Text;
@@ -84,6 +87,9 @@ public class NPCSad : MonoBehaviour
             //interactable = false;
             happy = true;
             TMP_Text.text = "";
+
+            audiosource.pitch = Random.Range(0.8f, 1.2f);
+            audiosource.PlayOneShot(ohyeahsound);
         }
 
         HelpManager.instance.personHelped();

@@ -11,12 +11,18 @@ public class RecrutableNPC : InteractableBubbleItem
     public float offset = 1f;
     public Transform target = null;
     public float moveSpeed = 5f;
+    public CircleCollider2D colliderCircle;
+
+    public AudioSource audiosource;
+    public AudioClip helloSound;
+
     private Rigidbody2D rb;
     private Vector2 movement;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        colliderCircle = GetComponent<CircleCollider2D>();
     }
 
     //public override void Interaction()
@@ -34,6 +40,25 @@ public class RecrutableNPC : InteractableBubbleItem
             Vector3 direction = target.position - transform.position;
             direction.Normalize();
             movement = direction;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            //audiosource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+           // audiosource.PlayOneShot(helloSound);
+
+            if (!isFollowing)
+            {
+                audiosource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+                audiosource.PlayOneShot(helloSound);
+            }
+            else if (isFollowing)
+            {
+                colliderCircle.enabled = !colliderCircle.enabled;
+            }
         }
     }
 
