@@ -21,6 +21,9 @@ public class NPCHammering : MonoBehaviour
 
     public GameObject bully;
     Player player;
+    BubbleInteraction bubbleInteraction;
+    public int peopleAmountNeeded = 1;
+
     
 
     float health = 10f;
@@ -31,9 +34,11 @@ public class NPCHammering : MonoBehaviour
     {
         circleCollider = GetComponent<CircleCollider2D>();
         healthBar.SetActive(false);
-        healthBarSlider.value = health;
+        healthBarSlider.value = maxHealth;
         healthBarSlider.maxValue = maxHealth;
+
         player = ReInput.players.GetPlayer(0);
+        bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
 
     }
 
@@ -50,6 +55,7 @@ public class NPCHammering : MonoBehaviour
                     healthBar.SetActive(true);
                     interactable = true;
                 }
+                
             }
         }
     }
@@ -76,11 +82,16 @@ public class NPCHammering : MonoBehaviour
         {
             if(player.GetButtonDown("Hammering") && interactable)
             {
-                LowerBar(1f);
-            }
-
+                if(bubbleInteraction.peopleHitCounter >= peopleAmountNeeded)
+                {
+                    LowerBar(1f);
+                }else 
+                {
+                    Debug.Log("Pas assez de personnes :(");
+                }
+            } 
             if(health > 0 && health < maxHealth)
-                health += 0.005f;
+                health += 0.009f;
                 updateBar();
             {
 
@@ -90,7 +101,7 @@ public class NPCHammering : MonoBehaviour
                 secondInteraction();
             }
         }
-
+        
         if(alive && health <= 0) {
             alive = false;
         }
