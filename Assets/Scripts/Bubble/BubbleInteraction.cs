@@ -23,7 +23,7 @@ public class BubbleInteraction : MonoBehaviour
         InteractBubble();
 
         if (peopleHitCounter > 1)
-            DispatchFollowers();
+            StopFollowers();
     }
 
     public void UpdateRecrutableList()
@@ -67,7 +67,7 @@ public class BubbleInteraction : MonoBehaviour
         }
     }
 
-    void DispatchFollowers()
+    void StopFollowers()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
