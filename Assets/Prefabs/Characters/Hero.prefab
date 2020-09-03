@@ -149,10 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b4003b33d77924a9dc3a0647e9b9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleScaleMin: 0.25
+  bubbleScaleMax: 0.75
   recrutables: []
   peopleHitCounter: 1
   bubble: {fileID: 7112767888007045003}
-  expantionSpeed: 0.2
+  expantionSpeed: 1
 --- !u!1001 &5475986513535398185
 PrefabInstance:
   m_ObjectHideFlags: 0
