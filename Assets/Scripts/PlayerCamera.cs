@@ -45,7 +45,7 @@ public class PlayerCamera : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+/*        if (Input.GetKeyDown(KeyCode.Space))
         {
             OnMap = !OnMap;
             if (OnMap)
@@ -56,7 +56,7 @@ public class PlayerCamera : MonoBehaviour
             {
                 VisuPlayer.SetActive(false);
             }
-        }
+        } */
     }
 
     void FixedUpdate()

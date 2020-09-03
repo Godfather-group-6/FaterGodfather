@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCSad (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: m_text
+      value: How can I go home now ... ?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
 --- !u!1001 &102671295
@@ -1541,7 +1545,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1732,8 +1736,8 @@ Tilemap:
     m_Data: {fileID: -7809732894564467430, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -5927503582139787395, guid: d265e99c351ca9e4cb131d5b8df980c7, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -7213843062518203151, guid: d265e99c351ca9e4cb131d5b8df980c7, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 7926572782516502959, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
   - m_RefCount: 2
@@ -1748,8 +1752,8 @@ Tilemap:
     m_Data: {fileID: 1811224347164032240, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -2180831138024101781, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -7213843062518203151, guid: d265e99c351ca9e4cb131d5b8df980c7, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8098112438997425582, guid: d265e99c351ca9e4cb131d5b8df980c7, type: 3}
   - m_RefCount: 1
@@ -2858,7 +2862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_text
-      value: Today I got fired from my job
+      value: I just lost my job, my life is over...
       objectReference: {fileID: 0}
     - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_fontStyle
@@ -3407,6 +3411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCSad (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: m_text
+      value: Just leave me alone, you thugs !
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
 --- !u!4 &805350700 stripped
@@ -3468,6 +3476,10 @@ PrefabInstance:
     - target: {fileID: 3831802855053437191, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_Name
       value: NPCSad (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: m_text
+      value: "Hold on, don\u2019t cry... "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
@@ -3829,6 +3841,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3831802855053437189, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
   m_PrefabInstance: {fileID: 951915633}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1003422723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8849996072802048958, guid: 7b98664cf3c74407fa3055dafa991d69, type: 3}
+  m_PrefabInstance: {fileID: 2116427571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581b3e3c96df0ef42aef16b63b27b87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1012449565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9396,6 +9419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCSad (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: m_text
+      value: Why are those thugs so mean to me ?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
 --- !u!1 &1772697555
@@ -12814,6 +12841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCSad
       objectReference: {fileID: 0}
+    - target: {fileID: 3831802855445141016, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: m_text
+      value: "I don\u2019t want to talk."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
 --- !u!4 &1938641045 stripped
@@ -13272,7 +13303,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -13405,6 +13436,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8849996072328683303, guid: 7b98664cf3c74407fa3055dafa991d69, type: 3}
+      propertyPath: rewiredInputManager
+      value: 
+      objectReference: {fileID: 1003422723}
     - target: {fileID: 8849996072802048958, guid: 7b98664cf3c74407fa3055dafa991d69, type: 3}
       propertyPath: _userData.joystickMaps.Array.size
       value: 2
@@ -13547,7 +13582,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7f6bffb429d574636a813cadd2cc6ea2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
