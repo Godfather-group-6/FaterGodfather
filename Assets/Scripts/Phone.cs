@@ -15,7 +15,9 @@ public class Phone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bubble" && !collision.gameObject.activeSelf && !Used)
         {
-            for(int i=0; i < Spawn.Length; i++)
+            gameObject.GetComponent<Animation>().Play("PhoneFeedBack");
+            gameObject.GetComponent<AudioSource>().Play();
+            for (int i=0; i < Spawn.Length; i++)
             {
                GameObject Go= Instantiate(NPC, Spawn[i].position, transform.rotation);
                 Pop.Add(Go);
