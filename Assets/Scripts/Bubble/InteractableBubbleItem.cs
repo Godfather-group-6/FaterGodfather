@@ -6,35 +6,7 @@ using UnityEngine.UI;
 
 public class InteractableBubbleItem : NPCBehaviour
 {
-    public Image lifeBar;
-    public float totalLifepoints = 3;
-    float lifepoints;
-
-    void Awake()
-    {
-        lifepoints = totalLifepoints;
-        lifeBar.fillAmount = lifepoints / totalLifepoints;
-    }
-
-    void UpdateLife()
-    {
-        if (lifepoints <= 0)
-        {
-            lifepoints = 0;
-            return;
-        }
-
-        lifepoints--;
-
-        if(lifepoints == 0)
-        {
-            Interaction();
-        }
-
-        lifeBar.fillAmount = lifepoints / totalLifepoints;
-    }
-
-    private void Interaction()
+    public virtual void Interaction()
     {
         choicesPanel.SetActive(false);
         askIcon.SetActive(false);
@@ -53,7 +25,7 @@ public class InteractableBubbleItem : NPCBehaviour
         }
         if (collision.gameObject.tag == "Bubble" && !collision.gameObject.activeSelf)
         {
-            UpdateLife();
+            Interaction();
         }
     }
 }
