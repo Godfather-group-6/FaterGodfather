@@ -134,9 +134,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1532097985818094177, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532097985818094177, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.43
+      objectReference: {fileID: 0}
     - target: {fileID: 2447205144223043672, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499049426673548368, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499049426673548368, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427203700907415936, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427203700907415936, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696010747613631679, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696010747613631679, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.77
       objectReference: {fileID: 0}
     - target: {fileID: 9118572900167472640, guid: 678fa40ea3dedf1459c72d785d0ccecc, type: 3}
       propertyPath: m_LocalPosition.x
