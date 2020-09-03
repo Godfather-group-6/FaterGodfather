@@ -45,13 +45,13 @@ public class BubbleInteraction : MonoBehaviour
     void InteractBubble()
     {
 
-        if (Input.GetKeyDown(KeyCode.J) && !bubble.activeSelf)
+        if (Input.GetKeyDown(KeyCode.J) && !bubble.activeSelf || Input.GetButton("Fire3") && !bubble.activeSelf)
         {
             bubble.SetActive(true);
             bubble.transform.localScale = Vector3.one * bubbleScaleMin;
         }
 
-        if (Input.GetKey(KeyCode.J) && bubble.activeSelf)
+        if (Input.GetKey(KeyCode.J) && bubble.activeSelf || Input.GetButton("Fire3") && bubble.activeSelf)
         {
             if (bubble.transform.localScale.x >= bubbleScaleMax)
                 bubble.transform.localScale = Vector3.one * bubbleScaleMax;
@@ -60,7 +60,7 @@ public class BubbleInteraction : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.J) && bubble.activeSelf)
+        if (Input.GetKeyUp(KeyCode.J) && bubble.activeSelf || Input.GetButton("Fire3") && bubble.activeSelf)
         {
             bubble.transform.localScale = Vector3.one * bubbleScaleMin;
             bubble.SetActive(false);
@@ -79,5 +79,17 @@ public class BubbleInteraction : MonoBehaviour
             }
             recrutables.Clear();
         }
+    }
+
+    public void DispatchFollowers()
+    {
+        peopleHitCounter = 1;
+        foreach (RecrutableNPC recrutableNPC in recrutables)
+        {
+            recrutableNPC.isFollowing = false;
+            recrutableNPC.target = null;
+            Destroy(recrutableNPC.gameObject);
+        }
+        recrutables.Clear();
     }
 }
