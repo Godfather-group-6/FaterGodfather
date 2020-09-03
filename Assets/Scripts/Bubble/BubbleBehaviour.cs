@@ -10,6 +10,9 @@ public class BubbleBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Recrutable")
         {
+            if (gameObject.activeSelf)
+                return;
+
             if (!collision.gameObject.GetComponent<RecrutableNPC>().isFollowing)
             {
                 bubbleInteraction.recrutables.Add(collision.gameObject.GetComponent<RecrutableNPC>());
