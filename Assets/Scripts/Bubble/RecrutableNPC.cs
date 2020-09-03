@@ -19,19 +19,22 @@ public class RecrutableNPC : InteractableBubbleItem
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public override void Interaction()
-    {
-        base.Interaction();
+    //public override void Interaction()
+    //{
+    //    base.Interaction();
 
-        if (!isFollowing)
-            isFollowing = true;
-    }
+    //    if (!isFollowing)
+    //        isFollowing = true;
+    //}
 
     private void Update()
     {
-        Vector3 direction = target.position - transform.position;
-        direction.Normalize();
-        movement = direction;
+        if (target != null)
+        {
+            Vector3 direction = target.position - transform.position;
+            direction.Normalize();
+            movement = direction;
+        }
     }
 
     private void FixedUpdate()

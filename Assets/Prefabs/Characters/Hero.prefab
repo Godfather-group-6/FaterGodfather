@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.040000003
       objectReference: {fileID: 0}
+    - target: {fileID: 2655402589773236836, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
+      propertyPath: bubbleInteraction
+      value: 
+      objectReference: {fileID: 4666524299601718380}
     - target: {fileID: 2975538005616127650, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_Name
       value: Circle
