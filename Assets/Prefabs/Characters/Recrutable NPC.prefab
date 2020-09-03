@@ -189,8 +189,8 @@ GameObject:
   - component: {fileID: 5021391927295596258}
   - component: {fileID: 5021391927295596257}
   m_Layer: 0
-  m_Name: NPC Bulle (4)
-  m_TagString: Interactable with bubble
+  m_Name: Recrutable NPC
+  m_TagString: Recrutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

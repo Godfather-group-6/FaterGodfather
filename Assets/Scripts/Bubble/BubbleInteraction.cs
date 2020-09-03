@@ -21,6 +21,11 @@ public class BubbleInteraction : MonoBehaviour
         InteractBubble();
     }
 
+    public void UpdateRecrutableList()
+    {
+        for(int i = 0; i < )
+    }
+
     void InteractBubble()
     {
 
