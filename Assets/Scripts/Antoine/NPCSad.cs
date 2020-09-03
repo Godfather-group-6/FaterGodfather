@@ -9,19 +9,19 @@ public class NPCSad : MonoBehaviour
     public int peopleAmountNeeded = 1;
     public GameObject peopleAmountText;
     public bool happy;
-    public bool interactable;
+    public bool isInTrouble = false;
+    //public bool interactable;
 
     CircleCollider2D circleCollider;
     public GameObject infoBubble;
-    public GameObject player;
     
-    BubbleInteraction bubbleInteraction;
+    //BubbleInteraction bubbleInteraction;
     TextMeshProUGUI TMP_Text;
 
 
     void Start() {
         
-        bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
+        //bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
 
         TMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
         TMP_Text.text = peopleAmountNeeded + "x ";
@@ -36,7 +36,7 @@ public class NPCSad : MonoBehaviour
             if (!infoBubble.activeSelf)
             {
                 infoBubble.SetActive(true);
-                interactable = true;
+                //interactable = true;
             }
         }
     }
@@ -47,24 +47,24 @@ public class NPCSad : MonoBehaviour
             if (infoBubble.activeSelf)
             {
                 infoBubble.SetActive(false);
-                interactable = false;
+                //interactable = false;
             }
         }
     }
 
-    private void Update() {
-        if(Input.GetKeyDown("e") && interactable){
-            if(peopleAmountNeeded<=bubbleInteraction.peopleHitCounter) {
-                Helped();
-            } else {
-                Debug.Log("Pas assez de personnes :(");
-            }
-        }
-    }
+    //private void Update() {
+    //    if(Input.GetKeyDown("e") && interactable){
+    //        if(peopleAmountNeeded<=bubbleInteraction.peopleHitCounter) {
+    //            Helped();
+    //        } else {
+    //            Debug.Log("Pas assez de personnes :(");
+    //        }
+    //    }
+    //}
 
     public void Helped() {
         infoBubble.SetActive(false);
-        interactable = false;
+        //interactable = false;
         happy = true;
         TMP_Text.text = "";
 
