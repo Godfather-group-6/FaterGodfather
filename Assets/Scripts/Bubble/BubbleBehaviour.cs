@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BubbleBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private BubbleInteraction bubbleInteraction;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Recrutable")
+        {
+            if (gameObject.activeSelf)
+                return;
+
+            if (!collision.gameObject.GetComponent<RecrutableNPC>().isFollowing)
+            {
+                bubbleInteraction.recrutables.Add(collision.gameObject.GetComponent<RecrutableNPC>());
+                bubbleInteraction.UpdateRecrutableList();
+            }
+        }
     }
 }
