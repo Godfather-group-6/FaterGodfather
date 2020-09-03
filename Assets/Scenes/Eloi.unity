@@ -1510,6 +1510,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: 35, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: 14, y: 5, z: 0}
     second:
       serializedVersion: 2
@@ -1558,8 +1567,8 @@ Tilemap:
   - first: {x: 35, y: 5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1657,7 +1666,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 2186b3fa18cc6425eb8e78b2b1e154ef, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 59f6b0f20d63742f8a46fdb3949847d3, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 19c6997fbe694ec48a050a880a6399e3, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 67e2e82822b62c84fb9ea8d2a57408b9, type: 2}
@@ -1686,7 +1695,7 @@ Tilemap:
     m_Data: {fileID: 6913916146629619441, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: -7809732894564467430, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: -5927503582139787395, guid: d265e99c351ca9e4cb131d5b8df980c7, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8098112438997425582, guid: d265e99c351ca9e4cb131d5b8df980c7, type: 3}
@@ -1705,7 +1714,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -2180831138024101781, guid: 80e443215077e4f71832230a4dfcde30, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 68
+  - m_RefCount: 69
     m_Data:
       e00: 1
       e01: 0
@@ -1724,7 +1733,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 68
+  - m_RefCount: 69
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2714,11 +2723,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8199997
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.1000004
+      value: -1.76
       objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12832,11 +12841,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 242448462}
+  _targetMAP: {fileID: 0}
+  VisuPlayer: {fileID: 0}
   _offsetPos: {x: 0, y: 0, z: -10}
   _followOnX: 1
   _followOnY: 1
   _smoothCam: 1
   _speedSmooth: 0.7
+  Dezoom: 0
+  ZoomSpeed: 0
   InNPCRange: 0
   NPCInRange: {fileID: 0}
 --- !u!82 &2114145040
