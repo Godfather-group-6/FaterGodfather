@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable with bubble
   - Bubble
+  - Recrutable
   layers:
   - Default
   - TransparentFX

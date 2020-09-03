@@ -7,6 +7,8 @@ public class BubbleInteraction : MonoBehaviour
     float bubbleScaleMin = 0.04f;
     float bubbleScaleMax = .2f;
 
+    public List<RecrutableNPC> recrutables = new List<RecrutableNPC>();
+
     public GameObject bubble;
     public float expantionSpeed = .2f;
     private void Start()
@@ -17,6 +19,11 @@ public class BubbleInteraction : MonoBehaviour
     private void Update()
     {
         InteractBubble();
+    }
+
+    public void UpdateRecrutableList()
+    {
+        
     }
 
     void InteractBubble()
