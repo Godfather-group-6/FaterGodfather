@@ -19,7 +19,7 @@ public class NPCSad : MonoBehaviour
     TextMeshProUGUI TMP_Text;
 
 
-    void Start() {
+    void awake() {
         
         //bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
         
