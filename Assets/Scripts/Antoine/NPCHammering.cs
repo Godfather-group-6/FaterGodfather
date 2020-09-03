@@ -16,6 +16,8 @@ public class NPCHammering : MonoBehaviour
     
     public GameObject healthBar;
     public Slider healthBarSlider;
+
+    public GameObject bully;
     
 
     float health = 10f;
@@ -73,7 +75,7 @@ public class NPCHammering : MonoBehaviour
             }
 
             if(health > 0 && health < maxHealth)
-                health += 0.001f;
+                health += 0.005f;
                 updateBar();
             {
 
@@ -109,7 +111,12 @@ public class NPCHammering : MonoBehaviour
     {
         healthBar.SetActive(false);
         interactable = false;
-        Debug.Log("Oh, une interaction !");
+
+        if(bully){
+            NPCSad  npcSad =  bully.GetComponent<NPCSad>();
+            npcSad.Helped();
+        }
+        Destroy(gameObject);
     }
 
 
