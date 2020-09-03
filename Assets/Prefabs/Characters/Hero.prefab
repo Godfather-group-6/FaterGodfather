@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4666524299601718378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.88, y: -3.68, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 6108188098974081189}
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -3697285119753643182, guid: 74cf44060055eb8488f027bd27bb223b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recrutables: []
+  peopleHitCounter: 1
   bubble: {fileID: 7112767888007045003}
   expantionSpeed: 0.2
 --- !u!1001 &5475986513535398185
@@ -165,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0039999965
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalPosition.z
@@ -205,15 +206,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.040000003
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.040000003
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.040000003
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2655402589773236836, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: bubbleInteraction
