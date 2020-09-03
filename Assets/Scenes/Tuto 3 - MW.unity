@@ -6266,6 +6266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 145aeca7fd1be494a9ee29207bd2578a, type: 3}
+--- !u!4 &1100709086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4666524299601718376, guid: 2faeaa9f791dfcc479ce919a7889a923, type: 3}
+  m_PrefabInstance: {fileID: 848340487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1162331270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6911,6 +6916,7 @@ GameObject:
   - component: {fileID: 1483596449}
   - component: {fileID: 1483596448}
   - component: {fileID: 1483596447}
+  - component: {fileID: 1483596450}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6953,7 +6959,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6983,6 +6989,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483596450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483596446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab10484c8bf8a4186f1aed0613cf3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1100709086}
+  _offsetPos: {x: 0, y: 0, z: -10}
+  _followOnX: 1
+  _followOnY: 1
+  _smoothCam: 1
+  _speedSmooth: 0.7
+  InNPCRange: 0
+  NPCInRange: {fileID: 0}
 --- !u!1001 &1775921125
 PrefabInstance:
   m_ObjectHideFlags: 0
