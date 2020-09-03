@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class BubbleBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private BubbleInteraction bubbleInteraction;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (gameObject.activeSelf)
+            return;
+
+        if (collision.gameObject.tag == "Recrutable")
+        {
+
+            if (!collision.gameObject.GetComponent<RecrutableNPC>().isFollowing)
+            {
+                bubbleInteraction.recrutables.Add(collision.gameObject.GetComponent<RecrutableNPC>());
+                bubbleInteraction.UpdateRecrutableList();
+            }
+        }
+        else if (collision.gameObject.tag == "NPCSad")
+        {
+            if (collision.gameObject.GetComponent<NPCSad>().isInTrouble)
+                return;
+
+            if (bubbleInteraction.peopleHitCounter >= collision.gameObject.GetComponent<NPCSad>().peopleAmountNeeded)
+            {
+                collision.gameObject.GetComponent<NPCSad>().Helped();
+                bubbleInteraction.DispatchFollowers();
+            }
+            else
+            {
+                Debug.Log("Pas assez de personnes :(");
+            }
+        }
     }
 }

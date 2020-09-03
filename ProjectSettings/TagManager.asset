@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Interactable with bubble
   - Bubble
+  - Recrutable
+  - NPCHostile
+  - NPCSad
   layers:
   - Default
   - TransparentFX
