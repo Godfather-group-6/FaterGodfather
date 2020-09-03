@@ -150,11 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1749325ac7143499458e322e843583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcText: 
-  npcThankText: 
+  npcText: Oh i'm so sad, I need happiness !
+  npcThankText: Thanks, I'll remember that !
   waitTimeBeforeLeaving: 1
   moveSpeed: 5
   peopleAmountNeeded: 1
+  descriptionText: {fileID: 3831802855445141018}
   peopleAmountText: {fileID: 4048931382756419592}
   happy: 0
   isInTrouble: 0

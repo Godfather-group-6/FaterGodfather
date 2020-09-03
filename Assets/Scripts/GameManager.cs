@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public float Temps;
     public TextMeshProUGUI Chrono;
-    int NbrFollower;
+    int NbrFollower = 1;
     float timer;
  public static GameManager instance;
 

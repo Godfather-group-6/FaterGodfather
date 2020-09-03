@@ -7,14 +7,15 @@ using TMPro;
 
 public class NPCSad : MonoBehaviour
 {
-    public string npcText;
-    public string npcThankText;
+    public string npcText = "Oh i'm so sad, I need happiness !";
+    public string npcThankText = "Thanks, I'll remember that !";
 
     Rigidbody2D rb;
     public float waitTimeBeforeLeaving = 1f;
     public float moveSpeed = 5f;
 
     public int peopleAmountNeeded = 1;
+    public GameObject descriptionText;
     public GameObject peopleAmountText;
     public bool happy;
     public bool isInTrouble = false;
@@ -32,6 +33,7 @@ public class NPCSad : MonoBehaviour
 
     //BubbleInteraction bubbleInteraction;
     TextMeshProUGUI TMP_Text;
+    TextMeshProUGUI peopleTMP_Text;
 
     private void Awake()
     {
@@ -43,16 +45,16 @@ public class NPCSad : MonoBehaviour
 
         //bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
 
-        TMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
+        TMP_Text = descriptionText.GetComponent<TextMeshProUGUI>();
+        peopleTMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
 
         if (!isInTrouble)
         {
-            TMP_Text.text = peopleAmountNeeded + "x ";
+            TMP_Text.text = npcText;
             infoBubble.SetActive(false);
         }
         else
         {
-            TMP_Text.text = "";
             infoBubble.SetActive(false);
         }
     }
@@ -103,11 +105,10 @@ public class NPCSad : MonoBehaviour
 
         if (!isInTrouble)
         {
-            infoBubble.SetActive(false);
             //interactable = false;
             happy = true;
             charSpriteRenderer.sprite = happySprite;
-            TMP_Text.text = "";
+            TMP_Text.text = npcThankText;
         }
 
         HelpManager.instance.personHelped();
@@ -126,6 +127,7 @@ public class NPCSad : MonoBehaviour
         charSpriteRenderer.sprite = happySprite;
         DOVirtual.DelayedCall(waitTimeBeforeLeaving, () =>
         {
+            infoBubble.SetActive(false);
             transform.DOMove(happyExitPosition.position, 2f)
             .OnComplete(() => { Destroy(gameObject); });
         });
