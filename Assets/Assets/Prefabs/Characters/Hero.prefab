@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9009c44107ac1d14496f9e66eda90bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 180
   animator: {fileID: 2083859107732235609}
   charSprite: {fileID: 3018898449501184492}
-  speed: 180
 --- !u!50 &4666524299601718382
 Rigidbody2D:
   serializedVersion: 4
@@ -86,9 +86,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.015403986, y: 0.4852252}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.49280143
 --- !u!114 &4666524299601718380
 MonoBehaviour:
   m_ObjectHideFlags: 0
