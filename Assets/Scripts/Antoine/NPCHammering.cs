@@ -25,6 +25,9 @@ public class NPCHammering : MonoBehaviour
     BubbleInteraction bubbleInteraction;
     public int peopleAmountNeeded = 1;
 
+    public AudioSource soundSource;
+    public AudioClip ouchSound;
+
     
 
     float health = 10f;
@@ -85,6 +88,9 @@ public class NPCHammering : MonoBehaviour
                 if(bubbleInteraction.peopleHitCounter >= peopleAmountNeeded)
                 {
                     LowerBar(1f);
+                    soundSource.pitch = Random.Range(0.7f, 1.2f); ;
+                    soundSource.PlayOneShot(ouchSound);
+
                 }else 
                 {
                     Debug.Log("Pas assez de personnes :(");

@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafad40aa280b024ab45c8b22c3091f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Game
+  SceneToLoad: Eloi
 --- !u!114 &1180553846
 MonoBehaviour:
   m_ObjectHideFlags: 0
