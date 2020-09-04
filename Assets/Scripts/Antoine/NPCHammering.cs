@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
 using DG.Tweening;
+using TMPro;
 
 public class NPCHammering : MonoBehaviour
 {
+    public string npcText = "Mind your own business !";
+    public string npcThankText = "Oh sorry, I will stop";
+
     public Transform sorryExitPosition;
 
     CircleCollider2D circleCollider;
@@ -16,7 +20,8 @@ public class NPCHammering : MonoBehaviour
 
     [SerializeField]
     public bool alive = true;
-    
+
+    public GameObject canvas;
     public GameObject healthBar;
     public Slider healthBarSlider;
 
@@ -25,10 +30,18 @@ public class NPCHammering : MonoBehaviour
     BubbleInteraction bubbleInteraction;
     public int peopleAmountNeeded = 1;
 
+    public GameObject descriptionText;
+    public GameObject peopleAmountText;
+
     public AudioSource soundSource;
     public AudioClip ouchSound;
 
-    
+    [SerializeField] private Animator animator;
+
+    TextMeshProUGUI TMP_Text;
+    TextMeshProUGUI peopleTMP_Text;
+
+
 
     float health = 10f;
     float maxHealth = 10f;
@@ -36,7 +49,9 @@ public class NPCHammering : MonoBehaviour
     void Awake()
     {
         circleCollider = GetComponent<CircleCollider2D>();
-        healthBar.SetActive(false);
+        TMP_Text = descriptionText.GetComponent<TextMeshProUGUI>();
+        peopleTMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
+        canvas.SetActive(false);
         healthBarSlider.value = maxHealth;
         healthBarSlider.maxValue = maxHealth;
 
@@ -45,7 +60,10 @@ public class NPCHammering : MonoBehaviour
 
     }
 
-    
+    private void Start()
+    {
+        TMP_Text.text = npcText;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -53,9 +71,9 @@ public class NPCHammering : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                if (!healthBar.activeSelf)
+                if (!canvas.activeSelf)
                 {
-                    healthBar.SetActive(true);
+                    canvas.SetActive(true);
                     interactable = true;
                 }
                 
@@ -69,9 +87,9 @@ public class NPCHammering : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                if (healthBar.activeSelf)
+                if (canvas.activeSelf)
                 {
-                    healthBar.SetActive(false);
+                    canvas.SetActive(false);
                     interactable = false;
                 }
             }
@@ -132,6 +150,7 @@ public class NPCHammering : MonoBehaviour
     void secondInteraction()
     {
         healthBar.SetActive(false);
+        peopleAmountText.SetActive(false);
         interactable = false;
 
         if(bully){
@@ -139,10 +158,17 @@ public class NPCHammering : MonoBehaviour
             npcSad.Helped();
         }
         //animation pour changer le sprite à ajouter
+        animator.SetTrigger("IdleT");
+        TMP_Text.text = npcThankText;
+
         DOVirtual.DelayedCall(1f, () =>
         {
+            canvas.SetActive(false);
             transform.DOMove(sorryExitPosition.position, 2f)
-            .OnComplete(() => { Destroy(gameObject); });
+            .OnComplete(() => 
+            {
+                Destroy(gameObject); 
+            });
         });
     }
 
