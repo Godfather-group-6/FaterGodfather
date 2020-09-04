@@ -371,6 +371,7 @@ MonoBehaviour:
   peopleAmountNeeded: 1
   descriptionText: {fileID: 1241413382358089171}
   peopleAmountText: {fileID: 7229168972140456853}
+  infoBubble: {fileID: 6914028296496511650}
   soundSource: {fileID: 413985736323968639}
   ouchSound: {fileID: 8300000, guid: 1d485d77d3e4548fe9f3868e54e3dad9, type: 3}
   animator: {fileID: 1846092540}

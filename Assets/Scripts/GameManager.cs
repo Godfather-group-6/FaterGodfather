@@ -24,10 +24,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        foreach (NPCSad NS in Resources.FindObjectsOfTypeAll(typeof(NPCSad)))
-        {
-            NS.peopleAmountText.GetComponent<TextMeshProUGUI>().text = NbrFollower + "/" + NS.peopleAmountNeeded;
-        }
+        UpdateNPCUI();
     }
     private void FixedUpdate()
     {
@@ -45,13 +42,18 @@ public class GameManager : MonoBehaviour
         {
             NbrFollower--;
         }
+        UpdateNPCUI();
+    }
+
+    void UpdateNPCUI()
+    {
         foreach (NPCSad NS in Resources.FindObjectsOfTypeAll(typeof(NPCSad)))
         {
-           NS.peopleAmountText.GetComponent<TextMeshProUGUI>().text =  NbrFollower+ " / " + NS.peopleAmountNeeded;
+            NS.peopleAmountText.GetComponent<TextMeshProUGUI>().text = NbrFollower + " / " + NS.peopleAmountNeeded;
         }
         foreach (NPCHammering NH in Resources.FindObjectsOfTypeAll(typeof(NPCHammering)))
         {
-            //quand il y aura l'indicateur
+            NH.peopleAmountText.GetComponent<TextMeshProUGUI>().text = NbrFollower + " / " + NH.peopleAmountNeeded;
         }
     }
     void GameTimer()

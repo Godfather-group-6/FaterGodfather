@@ -12,8 +12,6 @@ public class NPCHammering : MonoBehaviour
     public string npcThankText = "Oh sorry, I will stop";
 
     public Transform sorryExitPosition;
-
-    CircleCollider2D circleCollider;
     
     [SerializeField]
     public bool interactable;
@@ -32,6 +30,7 @@ public class NPCHammering : MonoBehaviour
 
     public GameObject descriptionText;
     public GameObject peopleAmountText;
+    public GameObject infoBubble;
 
     public AudioSource soundSource;
     public AudioClip ouchSound;
@@ -48,10 +47,8 @@ public class NPCHammering : MonoBehaviour
 
     void Awake()
     {
-        circleCollider = GetComponent<CircleCollider2D>();
         TMP_Text = descriptionText.GetComponent<TextMeshProUGUI>();
         peopleTMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
-        canvas.SetActive(false);
         healthBarSlider.value = maxHealth;
         healthBarSlider.maxValue = maxHealth;
 
@@ -63,6 +60,8 @@ public class NPCHammering : MonoBehaviour
     private void Start()
     {
         TMP_Text.text = npcText;
+        healthBar.SetActive(false);
+        infoBubble.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -71,9 +70,10 @@ public class NPCHammering : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                if (!canvas.activeSelf)
+                if (!healthBar.activeSelf)
                 {
-                    canvas.SetActive(true);
+                    healthBar.SetActive(true);
+                    infoBubble.SetActive(true);
                     interactable = true;
                 }
                 
@@ -87,9 +87,10 @@ public class NPCHammering : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                if (canvas.activeSelf)
+                if (healthBar.activeSelf)
                 {
-                    canvas.SetActive(false);
+                    healthBar.SetActive(false);
+                    infoBubble.SetActive(false);
                     interactable = false;
                 }
             }
@@ -171,7 +172,4 @@ public class NPCHammering : MonoBehaviour
             });
         });
     }
-
-
-
 }
