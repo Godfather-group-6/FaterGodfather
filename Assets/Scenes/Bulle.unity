@@ -568,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 2733281584150855192, guid: 74cf44060055eb8488f027bd27bb223b, type: 3}
     - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: peopleAmountNeeded
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: happyExitPosition
