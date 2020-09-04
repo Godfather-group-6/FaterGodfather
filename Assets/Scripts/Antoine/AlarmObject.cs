@@ -70,6 +70,7 @@ public class AlarmObject : MonoBehaviour
         if(player.GetButtonDown("Interact") && interactable && !triggered)
         {
             Debug.Log("Ding dong");
+            gameObject.GetComponent<AudioSource>().Play();
             triggered = true;
         }
 
