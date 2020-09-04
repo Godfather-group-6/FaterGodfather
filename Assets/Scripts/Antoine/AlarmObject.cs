@@ -81,8 +81,7 @@ public class AlarmObject : MonoBehaviour
         }
 
         
-        foreach (GameObject item in hostilesInRange) {
-            GameObject hostile = item.gameObject;
+        foreach (GameObject hostile in hostilesInRange) {
             if(hostile.GetComponent<AlarmResponse>() == null) 
             {
                 Debug.Log("HOSTILE MISSING TARGET POSITION (AlarmResponse)");
@@ -94,7 +93,7 @@ public class AlarmObject : MonoBehaviour
             if(hostile.transform.position.x == loc.x && hostile.transform.position.y == loc.y)
             {
                 Destroy(hostile);
-                hostilesInRange.Remove(item);
+                hostilesInRange.Remove(hostile);
                 return;
             }
         }
