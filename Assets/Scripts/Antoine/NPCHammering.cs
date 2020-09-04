@@ -40,6 +40,9 @@ public class NPCHammering : MonoBehaviour
     TextMeshProUGUI TMP_Text;
     TextMeshProUGUI peopleTMP_Text;
 
+    [SerializeField] private GameObject shineParticle;
+    [SerializeField] private GameObject madParticle;
+
 
 
     float health = 10f;
@@ -59,6 +62,8 @@ public class NPCHammering : MonoBehaviour
 
     private void Start()
     {
+        shineParticle.SetActive(false);
+        madParticle.SetActive(true);
         TMP_Text.text = npcText;
         healthBar.SetActive(false);
         infoBubble.SetActive(false);
@@ -154,7 +159,10 @@ public class NPCHammering : MonoBehaviour
         peopleAmountText.SetActive(false);
         interactable = false;
 
-        if(bully){
+        shineParticle.SetActive(true);
+        madParticle.SetActive(false);
+
+        if (bully){
             NPCSad  npcSad =  bully.GetComponent<NPCSad>();
             npcSad.Helped();
         }

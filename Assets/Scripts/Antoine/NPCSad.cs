@@ -35,10 +35,17 @@ public class NPCSad : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    [SerializeField] private GameObject shineParticle;
+    [SerializeField] private GameObject sadParticle;
+
 
     void Start()
     {
         //bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
+
+        shineParticle.SetActive(false);
+        sadParticle.SetActive(true);
+
 
         TMP_Text = descriptionText.GetComponent<TextMeshProUGUI>();
         peopleTMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
@@ -91,7 +98,8 @@ public class NPCSad : MonoBehaviour
 
     public void Helped()
     {
-
+        shineParticle.SetActive(true);
+        sadParticle.SetActive(false);
         //interactable = false;
         happy = true;
         charSpriteRenderer.sprite = happySprite;
