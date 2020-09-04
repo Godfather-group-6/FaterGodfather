@@ -42,7 +42,10 @@ public class BubbleInteraction : MonoBehaviour
                 recrutables[i].target = recrutables[i - 1].transform;
 
             if (!recrutables[i].isFollowing)
+            {
                 recrutables[i].isFollowing = true;
+                GameManager.instance.UpdateFollower(true);
+            }
         }
 
         peopleHitCounter = 1 + recrutables.Count;
@@ -82,6 +85,7 @@ public class BubbleInteraction : MonoBehaviour
             {
                 recrutableNPC.isFollowing = false;
                 recrutableNPC.target = null;
+                GameManager.instance.UpdateFollower(false);
             }
             recrutables.Clear();
         }

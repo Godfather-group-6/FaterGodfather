@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
-
+using DG.Tweening;
 
 public class NPCHammering : MonoBehaviour
 {
+    public Transform sorryExitPosition;
 
     CircleCollider2D circleCollider;
     
@@ -31,7 +32,6 @@ public class NPCHammering : MonoBehaviour
 
     float health = 10f;
     float maxHealth = 10f;
-
 
     void Awake()
     {
@@ -138,7 +138,12 @@ public class NPCHammering : MonoBehaviour
             NPCSad  npcSad =  bully.GetComponent<NPCSad>();
             npcSad.Helped();
         }
-        Destroy(gameObject);
+        //animation pour changer le sprite à ajouter
+        DOVirtual.DelayedCall(1f, () =>
+        {
+            transform.DOMove(sorryExitPosition.position, 2f)
+            .OnComplete(() => { Destroy(gameObject); });
+        });
     }
 
 
