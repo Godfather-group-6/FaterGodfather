@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
-    public float Temps;
+    public float Temps = 300;
     public TextMeshProUGUI Chrono;
     int NbrFollower = 1;
     float timer;
+    public string endsceneName = "EndMenu";
+
  public static GameManager instance;
 
     void Awake()
@@ -21,10 +24,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        foreach (NPCSad NS in Resources.FindObjectsOfTypeAll(typeof(NPCSad)))
-        {
-            NS.peopleAmountText.GetComponent<TextMeshProUGUI>().text = NbrFollower + "/" + NS.peopleAmountNeeded;
-        }
+        UpdateNPCUI();
     }
     private void FixedUpdate()
     {
@@ -42,27 +42,38 @@ public class GameManager : MonoBehaviour
         {
             NbrFollower--;
         }
+        UpdateNPCUI();
+    }
+
+    void UpdateNPCUI()
+    {
         foreach (NPCSad NS in Resources.FindObjectsOfTypeAll(typeof(NPCSad)))
         {
-           NS.peopleAmountText.GetComponent<TextMeshProUGUI>().text =  NbrFollower+ " / " + NS.peopleAmountNeeded;
+            NS.peopleAmountText.GetComponent<TextMeshProUGUI>().text = NbrFollower + " / " + NS.peopleAmountNeeded;
         }
         foreach (NPCHammering NH in Resources.FindObjectsOfTypeAll(typeof(NPCHammering)))
         {
-            //quand il y aura l'indicateur
+            NH.peopleAmountText.GetComponent<TextMeshProUGUI>().text = NbrFollower + " / " + NH.peopleAmountNeeded;
         }
     }
     void GameTimer()
     {
-        timer -= Time.fixedDeltaTime;
-        Chrono.text = timer + " s";
-        if (timer < 0)
+        
+        timer = Temps - Time.timeSinceLevelLoad;;
+
+        string minutes = ((int) timer / 60).ToString();
+        string seconds = (timer % 60).ToString("f0");
+
+        Chrono.text = minutes + ":" + seconds;
+
+        if(timer <= 0)
         {
             EndGame();
         }
     }
     void EndGame()
     {
-        //Ce qu'il arrive quand le jeu termine 
+        SceneManager.LoadScene(endsceneName);
     }
 
 

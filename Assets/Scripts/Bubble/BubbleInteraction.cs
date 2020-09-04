@@ -16,6 +16,7 @@ public class BubbleInteraction : MonoBehaviour
     public int peopleHitCounter = 1;
 
     public GameObject bubble;
+    public CircleCollider2D CircleCollider2DNotTrigger;
     public float expantionSpeed = 2f;
     private void Start()
     {

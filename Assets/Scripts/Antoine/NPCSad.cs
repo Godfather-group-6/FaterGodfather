@@ -10,7 +10,6 @@ public class NPCSad : MonoBehaviour
     public string npcText = "Oh i'm so sad, I need happiness !";
     public string npcThankText = "Thanks, I'll remember that !";
 
-    Rigidbody2D rb;
     public float waitTimeBeforeLeaving = 1f;
     public float moveSpeed = 5f;
 
@@ -28,64 +27,54 @@ public class NPCSad : MonoBehaviour
 
     public Transform happyExitPosition = null;
 
-    CircleCollider2D circleCollider;
     public GameObject infoBubble;
 
     //BubbleInteraction bubbleInteraction;
     TextMeshProUGUI TMP_Text;
     TextMeshProUGUI peopleTMP_Text;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private Animator animator;
+
 
     void Start()
     {
-
         //bubbleInteraction = GameObject.Find("Hero").GetComponent<BubbleInteraction>();
 
         TMP_Text = descriptionText.GetComponent<TextMeshProUGUI>();
         peopleTMP_Text = peopleAmountText.GetComponent<TextMeshProUGUI>();
 
+        infoBubble.SetActive(false);
         if (!isInTrouble)
         {
             TMP_Text.text = npcText;
-            infoBubble.SetActive(false);
+            peopleAmountText.SetActive(true);
         }
         else
         {
-            infoBubble.SetActive(false);
+            peopleAmountText.SetActive(false);
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (!isInTrouble)
+        if (collision.CompareTag("Player") && !happy)
         {
-            if (collision.CompareTag("Player") && !happy)
+            if (!infoBubble.activeSelf)
             {
-                if (!infoBubble.activeSelf)
-                {
-                    infoBubble.SetActive(true);
-                    //interactable = true;
-                }
+                infoBubble.SetActive(true);
+                //interactable = true;
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!isInTrouble)
+        if (collision.CompareTag("Player") && !happy)
         {
-            if (collision.CompareTag("Player") && !happy)
+            if (infoBubble.activeSelf)
             {
-                if (infoBubble.activeSelf)
-                {
-                    infoBubble.SetActive(false);
-                    //interactable = false;
-                }
+                infoBubble.SetActive(false);
+                //interactable = false;
             }
         }
     }
@@ -103,17 +92,15 @@ public class NPCSad : MonoBehaviour
     public void Helped()
     {
 
-        if (!isInTrouble)
-        {
-            //interactable = false;
-            happy = true;
-            charSpriteRenderer.sprite = happySprite;
-            TMP_Text.text = npcThankText;
-        }
+        //interactable = false;
+        happy = true;
+        charSpriteRenderer.sprite = happySprite;
+        TMP_Text.text = npcThankText;
 
         HelpManager.instance.personHelped();
 
         Debug.Log("LANCER ANIM HEUREUX");
+        animator.SetTrigger("IdleTrans");
         if (happyExitPosition != null)
         {
             ExitLeaving();
