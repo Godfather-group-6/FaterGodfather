@@ -57,7 +57,7 @@ public class RecrutableNPC : InteractableBubbleItem
             }
             else if (isFollowing)
             {
-                colliderCircle.enabled = !colliderCircle.enabled;
+                colliderCircle.enabled = false;
             }
         }
     }
