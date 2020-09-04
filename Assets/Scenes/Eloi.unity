@@ -223,6 +223,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721662338}
     m_Modifications:
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcText
+      value: I just Lost my job, my life is over...
+      objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcThankText
+      value: Everythings's not that bad after all
+      objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.846342
@@ -2854,6 +2862,14 @@ PrefabInstance:
       propertyPath: peopleAmountNeeded
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcText
+      value: I'm so sad today... You could help me...
+      objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcThankText
+      value: I feel so much better now !
+      objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.99
@@ -3409,6 +3425,14 @@ PrefabInstance:
       propertyPath: peopleAmountNeeded
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcText
+      value: Why are those thugs so mean to me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcThankText
+      value: They're not that bad acrually.
+      objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 82.17
@@ -3475,6 +3499,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721662338}
     m_Modifications:
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcText
+      value: Hold on, don't cry...
+      objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcThankText
+      value: Now i wanna cry of joy!
+      objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 84.84
@@ -4501,32 +4533,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22024ffd9a3dbf940b8663144c7e6521, type: 3}
---- !u!1 &1343292173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3831802855053437191, guid: 22024ffd9a3dbf940b8663144c7e6521, type: 3}
-  m_PrefabInstance: {fileID: 1343292172}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1343292174 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3831802856515345098, guid: 22024ffd9a3dbf940b8663144c7e6521, type: 3}
-  m_PrefabInstance: {fileID: 1343292172}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1343292175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343292173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 876f43d70c00623409449c59a2290f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoBubble: {fileID: 1343292174}
-  interactable: 0
-  triggered: 0
-  rayon: 2
 --- !u!1 &1349815613
 GameObject:
   m_ObjectHideFlags: 0
@@ -9471,6 +9477,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721662338}
     m_Modifications:
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcText
+      value: I don't want to talk.
+      objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcThankText
+      value: Thanks fot comforting me !
+      objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.433345
@@ -9720,6 +9734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Temps: 0
   Chrono: {fileID: 0}
+  endsceneName: EndMenu
 --- !u!4 &1789903285
 Transform:
   m_ObjectHideFlags: 0
@@ -12938,6 +12953,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721662338}
     m_Modifications:
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcText
+      value: How can I go home now...?
+      objectReference: {fileID: 0}
+    - target: {fileID: 163968166161713365, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
+      propertyPath: npcThankText
+      value: i'm free !
+      objectReference: {fileID: 0}
     - target: {fileID: 3831802855053437189, guid: 5b9542df51e66f24d90033aea1e82b97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.56
@@ -13408,7 +13431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2114145039
 MonoBehaviour:
