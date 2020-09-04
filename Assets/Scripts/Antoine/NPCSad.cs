@@ -10,7 +10,6 @@ public class NPCSad : MonoBehaviour
     public string npcText = "Oh i'm so sad, I need happiness !";
     public string npcThankText = "Thanks, I'll remember that !";
 
-    Rigidbody2D rb;
     public float waitTimeBeforeLeaving = 1f;
     public float moveSpeed = 5f;
 
@@ -28,17 +27,14 @@ public class NPCSad : MonoBehaviour
 
     public Transform happyExitPosition = null;
 
-    CircleCollider2D circleCollider;
     public GameObject infoBubble;
 
     //BubbleInteraction bubbleInteraction;
     TextMeshProUGUI TMP_Text;
     TextMeshProUGUI peopleTMP_Text;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private Animator animator;
+
 
     void Start()
     {
@@ -114,6 +110,7 @@ public class NPCSad : MonoBehaviour
         HelpManager.instance.personHelped();
 
         Debug.Log("LANCER ANIM HEUREUX");
+        animator.SetTrigger("IdleTrans");
         if (happyExitPosition != null)
         {
             ExitLeaving();
