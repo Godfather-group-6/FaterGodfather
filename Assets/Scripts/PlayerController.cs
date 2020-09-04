@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputVector = Vector2.zero;
     private BubbleInteraction bubbleInteraction;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer charSprite;
+
 
 
     private void Awake()
@@ -30,9 +33,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    private void Update()
     {
         Move();
+    }
+
+    void FixedUpdate()
+    {
         if(!player.GetButton("Buble")) 
         {
             rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, vertical * speed * Time.deltaTime);
@@ -45,7 +52,30 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        horizontal = player.GetAxis("Move Horizontal");
-        vertical = player.GetAxis("Move Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        if (horizontal < 0)
+        {
+            animator.SetTrigger("IsRunningSide");
+            charSprite.flipX = false;
+        }
+        else if (horizontal > 0)
+        {
+            animator.SetTrigger("IsRunningSide");
+            charSprite.flipX = true;
+        }
+        else if (vertical > 0)
+        {
+            animator.SetTrigger("IsRunningBack");
+        }
+        else if (vertical < 0)
+        {
+            animator.SetTrigger("IsRunningFront");
+        }
+        else
+        {
+            animator.SetTrigger("Idle");
+        }
     }
 }

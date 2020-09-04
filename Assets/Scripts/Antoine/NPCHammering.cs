@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
-
+using DG.Tweening;
 
 public class NPCHammering : MonoBehaviour
 {
+    public Transform sorryExitPosition;
 
     CircleCollider2D circleCollider;
     
@@ -24,11 +25,13 @@ public class NPCHammering : MonoBehaviour
     BubbleInteraction bubbleInteraction;
     public int peopleAmountNeeded = 1;
 
+    public AudioSource soundSource;
+    public AudioClip ouchSound;
+
     
 
     float health = 10f;
     float maxHealth = 10f;
-
 
     void Awake()
     {
@@ -85,6 +88,9 @@ public class NPCHammering : MonoBehaviour
                 if(bubbleInteraction.peopleHitCounter >= peopleAmountNeeded)
                 {
                     LowerBar(1f);
+                    soundSource.pitch = Random.Range(0.7f, 1.2f); ;
+                    soundSource.PlayOneShot(ouchSound);
+
                 }else 
                 {
                     Debug.Log("Pas assez de personnes :(");
@@ -132,7 +138,12 @@ public class NPCHammering : MonoBehaviour
             NPCSad  npcSad =  bully.GetComponent<NPCSad>();
             npcSad.Helped();
         }
-        Destroy(gameObject);
+        //animation pour changer le sprite à ajouter
+        DOVirtual.DelayedCall(1f, () =>
+        {
+            transform.DOMove(sorryExitPosition.position, 2f)
+            .OnComplete(() => { Destroy(gameObject); });
+        });
     }
 
 

@@ -42,7 +42,10 @@ public class BubbleInteraction : MonoBehaviour
                 recrutables[i].target = recrutables[i - 1].transform;
 
             if (!recrutables[i].isFollowing)
+            {
                 recrutables[i].isFollowing = true;
+                GameManager.instance.UpdateFollower(true);
+            }
         }
 
         peopleHitCounter = 1 + recrutables.Count;
@@ -82,20 +85,28 @@ public class BubbleInteraction : MonoBehaviour
             {
                 recrutableNPC.isFollowing = false;
                 recrutableNPC.target = null;
+                GameManager.instance.UpdateFollower(false);
             }
             recrutables.Clear();
         }
     }
 
-    public void DispatchFollowers()
+    public void DispatchFollowers(int peopleNeeded)
     {
         peopleHitCounter = 1;
-        foreach (RecrutableNPC recrutableNPC in recrutables)
+        for (int i = 0; i < peopleNeeded - 1; i++)
         {
-            recrutableNPC.isFollowing = false;
-            recrutableNPC.target = null;
-            Destroy(recrutableNPC.gameObject);
+            RecrutableNPC lastRecrutable = recrutables[recrutables.Count - 1];
+            recrutables.Remove(lastRecrutable);
+            Destroy(lastRecrutable.gameObject);
         }
-        recrutables.Clear();
+        //foreach (RecrutableNPC recrutableNPC in recrutables)
+        //{
+        //    recrutableNPC.isFollowing = false;
+        //    recrutableNPC.target = null;
+        //    Destroy(recrutableNPC.gameObject);
+        //    recrutables.remlo
+        //}
+        //recrutables.Clear();
     }
 }
