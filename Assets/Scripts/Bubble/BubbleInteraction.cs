@@ -11,6 +11,7 @@ public class BubbleInteraction : MonoBehaviour
     [SerializeField] private GameObject shineParticle;
     [SerializeField] private AudioSource plop;
     [SerializeField] private AudioSource shineAudio;
+    [SerializeField] private AudioSource bulleEmphize;
 
     public List<RecrutableNPC> recrutables = new List<RecrutableNPC>();
     Player player;
@@ -62,6 +63,7 @@ public class BubbleInteraction : MonoBehaviour
         if (player.GetButtonDown("Buble") && !bubble.activeSelf)
         {
             bubble.SetActive(true);
+            bulleEmphize.Play();
             bubble.transform.localScale = Vector3.one * bubbleScaleMin;
         }
 
@@ -77,6 +79,8 @@ public class BubbleInteraction : MonoBehaviour
         if (player.GetButtonUp("Buble") && bubble.activeSelf)
         {
             shineParticle.SetActive(true);
+            shineAudio.Play();
+            plop.Play();
             DOVirtual.DelayedCall(1.5f, () =>
             {
                 shineParticle.SetActive(false);
