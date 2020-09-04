@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
-    public float Temps;
+    public float Temps = 300;
     public TextMeshProUGUI Chrono;
     int NbrFollower = 1;
     float timer;
+    public string endsceneName = "EndMenu";
+
  public static GameManager instance;
 
     void Awake()
@@ -53,16 +56,22 @@ public class GameManager : MonoBehaviour
     }
     void GameTimer()
     {
-        timer -= Time.fixedDeltaTime;
-        Chrono.text = timer + " s";
-        if (timer < 0)
+        
+        timer = Temps - Time.timeSinceLevelLoad;;
+
+        string minutes = ((int) timer / 60).ToString();
+        string seconds = (timer % 60).ToString("f0");
+
+        Chrono.text = minutes + ":" + seconds;
+
+        if(timer <= 0)
         {
             EndGame();
         }
     }
     void EndGame()
     {
-        //Ce qu'il arrive quand le jeu termine 
+        SceneManager.LoadScene(endsceneName);
     }
 
 

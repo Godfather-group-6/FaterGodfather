@@ -18,6 +18,7 @@ public class BubbleBehaviour : MonoBehaviour
             {
                 bubbleInteraction.recrutables.Add(collision.gameObject.GetComponent<RecrutableNPC>());
                 bubbleInteraction.UpdateRecrutableList();
+
             }
         }
         else if (collision.gameObject.tag == "NPCSad")
