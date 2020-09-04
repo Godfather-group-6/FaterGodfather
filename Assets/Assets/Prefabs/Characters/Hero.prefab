@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b4003b33d77924a9dc3a0647e9b9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleScaleMin: 0.25
-  bubbleScaleMax: 0.75
+  bubbleScaleMin: 0.45
+  bubbleScaleMax: 1.25
   recrutables: []
   peopleHitCounter: 1
   bubble: {fileID: 7112767888007045003}
@@ -261,15 +261,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2250172597453263244, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2655402589773236836, guid: 9cd8a7b65ed13364b9aa54a88c5c2135, type: 3}
       propertyPath: bubbleInteraction
