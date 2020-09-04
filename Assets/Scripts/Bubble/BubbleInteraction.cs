@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
-
+using DG.Tweening;
 
 public class BubbleInteraction : MonoBehaviour
 {
     public float bubbleScaleMin = 0.04f;
     public float bubbleScaleMax = .2f;
+    [SerializeField] private GameObject shineParticle;
+    [SerializeField] private AudioSource plop;
+    [SerializeField] private AudioSource shineAudio;
 
     public List<RecrutableNPC> recrutables = new List<RecrutableNPC>();
     Player player;
@@ -20,6 +23,7 @@ public class BubbleInteraction : MonoBehaviour
     public float expantionSpeed = 2f;
     private void Start()
     {
+        shineParticle.SetActive(false);
         bubble.SetActive(false);
         player = ReInput.players.GetPlayer(0);
 
@@ -72,6 +76,12 @@ public class BubbleInteraction : MonoBehaviour
 
         if (player.GetButtonUp("Buble") && bubble.activeSelf)
         {
+            shineParticle.SetActive(true);
+            DOVirtual.DelayedCall(1.5f, () =>
+            {
+                shineParticle.SetActive(false);
+            });
+            
             bubble.transform.localScale = Vector3.one * bubbleScaleMin;
             bubble.SetActive(false);
         }
@@ -86,7 +96,6 @@ public class BubbleInteraction : MonoBehaviour
             {
                 recrutableNPC.isFollowing = false;
                 recrutableNPC.target = null;
-                GameManager.instance.UpdateFollower(false);
             }
             recrutables.Clear();
         }
@@ -100,6 +109,7 @@ public class BubbleInteraction : MonoBehaviour
             RecrutableNPC lastRecrutable = recrutables[recrutables.Count - 1];
             recrutables.Remove(lastRecrutable);
             Destroy(lastRecrutable.gameObject);
+            GameManager.instance.UpdateFollower(false);
         }
         //foreach (RecrutableNPC recrutableNPC in recrutables)
         //{
