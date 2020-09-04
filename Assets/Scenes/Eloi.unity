@@ -9131,6 +9131,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1393938767}
     m_Modifications:
+    - target: {fileID: 2476496501863212277, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2789274037793928644, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
       propertyPath: sorryExitPosition
       value: 
@@ -9182,6 +9186,10 @@ PrefabInstance:
     - target: {fileID: 3831802855053437191, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
       propertyPath: m_Name
       value: NPCHammering
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743033625972596895, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5302480658127153434, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13536,6 +13544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1393938767}
     m_Modifications:
+    - target: {fileID: 2476496501863212277, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2789274037793928644, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
       propertyPath: bully
       value: 
@@ -13591,6 +13603,10 @@ PrefabInstance:
     - target: {fileID: 3831802855053437191, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
       propertyPath: m_Name
       value: NPCHammering (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743033625972596895, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5302480658127153434, guid: ba6ec194365f4014fa5d14b50397693d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13820,7 +13836,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b76a5b14b679e4f51a44f43f0f32d224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
